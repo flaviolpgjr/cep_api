@@ -8,13 +8,15 @@ class CepApiService
     result = JSON.parse(response.body)
 
     unless result.blank?
+
       Address.create(
         user: user,
         cep: result['cep'],
         uf: result['uf'],
         cidade: result['cidade'],
         bairro: result['bairro'],
-        logradouro: result['logradouro']
+        logradouro: result['logradouro'],
+        endereco_completo: "#{result['logradouro']}, #{result['bairro']}, #{result['cidade']} - #{result['uf']}"
       )
     end
 
@@ -29,5 +31,4 @@ class CepApiService
     address =  Address.find_by(cep: cep, user: user)
     return address
   end
-
 end

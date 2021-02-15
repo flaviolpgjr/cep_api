@@ -37,6 +37,7 @@ class GetAddressTest < ActionDispatch::IntegrationTest
     assert_equal address.cidade,     result['cidade']
     assert_equal address.bairro,     result['bairro']
     assert_equal address.logradouro, result['logradouro']
+    assert_equal address.endereco_completo, "#{result['logradouro']}, #{result['bairro']}, #{result['cidade']} - #{result['uf']}"
 
     assert_response :success
   end
