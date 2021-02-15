@@ -38,7 +38,7 @@ Para testar o projeto, recomenda-se postman ou insomnia.
 3. Pegar esse jwt e adicionar na aba de autenticação do seu cliente(Insomnia ou postman), lembrando de selecionar a forma de autenticação Bearer token.
 
 4. Após o token adicionado, para consultar um endereço utilizar uma chamada GET para: ```localhost:3000/addresses/:cep```
-   onde :cep, será o cep que deseja consultar>
+   onde :cep, será o cep que deseja consultar
 
 ### Rodando os testes
 
