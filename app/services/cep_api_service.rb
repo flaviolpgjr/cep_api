@@ -21,13 +21,13 @@ class CepApiService
   end
 
   def self.get_address(cep, user)
-      addresses =  Address.where(cep: cep, user: user)
-      return addresses.count > 0 ? get_address_cached(cep, user) : save_address(cep,user)
+    addresses =  Address.where(cep: cep, user: user)
+    return addresses.count > 0 ? get_address_cached(cep, user) : save_address(cep,user)
   end
 
   def self.get_address_cached(cep, user)
-      address =  Address.find_by(cep: cep, user: user)
-      return address
+    address =  Address.find_by(cep: cep, user: user)
+    return address
   end
 
 end
